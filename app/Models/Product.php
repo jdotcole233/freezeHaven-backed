@@ -14,14 +14,14 @@ class Product extends Model
         'product_name',
         'product_type',
         'product_category',
-        'user_id',
+        'employee_id',
         'product_img',
         'status'
     ];
 
     public function employee (): BelongsTo
     {
-        return $this->belongsTo(Employee::class);
+        return $this->belongsTo(Employee::class, 'employee_id', 'id');
     }
 
     public function product_details (): HasMany
